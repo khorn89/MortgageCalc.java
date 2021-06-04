@@ -34,6 +34,10 @@ class HelloWorld {
         double mortgage = principal
                 * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)
                 / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1));
-        System.out.println("Your mortgage will be: " + mortgage);
+
+
+        NumberFormat mortgageFormatted = NumberFormat.getCurrencyInstance();
+        String result  = mortgageFormatted.format(mortgage);
+        System.out.println("Your mortgage will be: " + result);
     }
 }
